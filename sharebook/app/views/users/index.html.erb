@@ -1,0 +1,15 @@
+<div class="span12">
+	<%= form_tag users_path, :method => 'get', :id => "users_search" do %>
+  <p>
+  	<%= select_tag "fieldtype", options_for_select([ "name", "email" ], "name") %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil%>
+    
+    
+  </p>
+  <div id="users"><%= render 'users' %></div>
+
+<% end %>
+<br />
+
+</div>

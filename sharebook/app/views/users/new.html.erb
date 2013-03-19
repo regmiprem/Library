@@ -1,0 +1,10 @@
+<div class="row-fluid show-grid">
+   <div class="span9 box curve"> 
+        <div class="title">Add New User  </div>
+	    <div class="pad15"> 
+		<%= simple_form_for @user, :url => {:controller => 'users',:action =>'creates'}, :html => { :class => 'form-horizontal' } do |f| %>
+		  <%= render :partial => 'form', :locals => { :f => f } %>
+		<% end %>
+		</div>
+	</div>
+</div>

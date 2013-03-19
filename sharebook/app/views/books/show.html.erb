@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @book.name %>
+</p>
+
+<ol class="Books">
+<h1>Chapters</h1>
+<% @book.assets.each do |asset| %>
+  <li>
+   <h1> <%= asset.content %> </h1>
+    <h4>Document</h4><% if asset.document.present? %><%= link_to "Download", asset.document.url, :target => "_blank", :class => "filelink" %><%else%>Empty<% end %>
+
+    <ol class="answers"><h3>Comments</h3>
+      <% asset.comments.each do |comment| %>
+        <li><%= comment.name %>:<%= comment.comment %></li>
+    </ol>
+
+     <%end%>
+  </li>
+  _________________________________________________________________
+<% end %>
+</ol>
+
+<% if @book.reviews.size > 0 %>
+  <h2>Comments</h2>
+  <% for comment in @book.reviews %>
+    <h3><%= comment.name %></h3>
+    <p><%= comment.content %></p>
+  <% end %>
+<% end %>
+    <h2>New Comment</h2>
+
+<%= form_for [@book, Review.new] do |f| %>
+  <p><%= f.label :name %> <%= f.text_field :name %></p>
+  <p><%= f.text_area :content, :rows => 10 %></p>
+  <p><%= f.submit %></p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

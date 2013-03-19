@@ -1,0 +1,22 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<h1>Listing books</h1>
+<table class="table table-bordered">
+  <tr>
+    <th><%= sortable "name" %></th>
+    <th>Content</th>
+    <th>Actions</th>
+  </tr>
+
+<% @books.each do |book| %>
+  <tr>
+    <td><%= book.name %></td>
+    <td><%= no_of_asstes(book.id) %></td>
+    <td><%= link_to 'Show', book %>
+    	<%= link_to 'Edit', edit_book_path(book) %>
+    	<%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+<% end %>
+</table>
+ <%= paginate @books %>

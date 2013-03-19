@@ -1,0 +1,18 @@
+<fieldset>
+	<%= f.label :content, "Description"%><br/>
+	<%= f.text_field :content %><br/>
+	<%= f.label :no_of_pages, "Number of pages" %>
+	<%= f.text_field :no_of_pages %>
+	<%= f.label :document,"Zip file"%><br>
+	<%= f.file_field :document %><br/>
+
+	<%= f.check_box :_destroy %>
+	<%= f.label :_destroy, "Remove Book" %>
+
+	<%= f.fields_for :comments do |builder| %>
+    <%= render 'comment_fields', f: builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Comment", f, :comments %>
+
+
+</fieldset>

@@ -1,0 +1,16 @@
+    
+  <% @users.each do |user| %>
+    	
+
+   
+           <p><strong>
+     <%= link_to(user.name) %> <br>
+     <%= mail_to user.email %><br></strong></p>
+     <%= link_to "Edit User", edit_user_path(user) %>
+    <%= link_to "Delete User", user, :confirm => "Are you sure?", :method => :delete %></div>
+  <% end %>
+     </div>
+    </div>
+
+
+

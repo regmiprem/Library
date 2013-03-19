@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<DATA>
+		<field>
+			<title>departments</title>
+			<label>Department Management</label>
+			<hint>This module is used to manage different departments of company.</hint>
+		</field>
+		<field>
+			<title>divisions</title>
+			<label>Division Management</label>
+			<hint>This module is used to manage different divisions of company.</hint>
+		</field>
+				
+			<!-- How to use Module manager 
+			Add following code in controller class
+				before_filter :checkModule
+			Add following code in within <DATA></DATA>of xml file
+			<field>
+					<title>title</title>
+					<label>Label of field</label>
+					<hint>Description of module.</hint>
+			</field>
+			Where 'title' is name of controller
+				  'label' is label of module for setting
+				  'hint' is certain information about module 
+			
+			-->
+		
+</DATA>

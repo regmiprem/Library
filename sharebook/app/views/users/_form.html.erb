@@ -1,0 +1,47 @@
+
+
+
+<div class="control-group">
+	<label for="date1" class="control-label">Username:</label>
+	<div class="controls">
+	   <div class="span6">
+			<%= f.input :name, :label=>false, :input_html => {:class => 'span6', :placeholder => "Username"} %>
+	   </div> 
+	</div>
+</div>
+<div class="control-group">
+	<label for="date1" class="control-label">Email:</label>
+	<div class="controls">
+	   <div class="span6">
+			<%= f.input :email, :label => false , :input_html => {:class => 'span6', :placeholder => "Enter your email address"} %>
+	   </div>
+	</div>
+</div>
+<div class="control-group">
+	<label for="date1" class="control-label">Password:</label>
+	<div class="controls">
+	   <div class="span6">
+		<%= f.input :password,  :as => :password, :label => false, :input_html => {:class => 'span6', :placeholder => "6 or more characters"} %>
+	   </div>
+	</div>
+</div>
+<div class="control-group">
+	<label for="date1" class="control-label">Repeat Password:</label>
+	<div class="controls">
+	   <div class="span6">
+		<%= f.input :password_confirmation, :as => :password, :label => false, :input_html => {:class => 'span6', :placeholder => "Retype password"} %>
+	   </div>
+	</div>
+</div>
+
+<div class="control-group">
+	<label for="date1" class="control-label">Role</label>
+	<div class="controls">
+	   <div class="span6">
+		<%= f.input :role, :collection => Role.all, :label => false, :prompt => "Select Role" , :input_html => {:class => 'span6'} %>
+	   </div>
+	</div>
+</div>
+<div class="form-actions no-margin">
+	<%= f.submit @action, :class => "btn btn-info pull-right" %>
+</div> 
